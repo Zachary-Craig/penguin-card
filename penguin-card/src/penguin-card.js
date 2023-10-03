@@ -1,40 +1,40 @@
-import { LitElement, html, css } from 'lit';
+import { PenguinCard } from './PenguinCard';
 
 const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 
 class PenguinCard extends LitElement {
-  static properties = {
-    header: { type: String },
-  }
-
-  static styles = css`
-    :host {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      font-size: calc(10px + 2vmin);
-      color: #1a2b42;
-      max-width: 960px;
-      margin: 0 auto;
-      text-align: center;
-      background-color: var(--penguin-card-background-color);
+    static properties = {
+      header: { type: String },
     }
-
-    .wrapper {
-  width: 400px;
-  border: 3px solid blue;
-}
-.btn-wrapper {
-  margin: 24px auto;
-}
-.btn-wrapper button {
-  font-size: 12px;
-  color: blue;
-  background-color: white;
-}
-.btn-wrapper button:hover {
+  
+    static styles = css`
+      :host {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: calc(10px + 2vmin);
+        color: #1a2b42;
+        max-width: 960px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: var(--penguin-card-background-color);
+      }
+  
+      .wrapper {
+    width: 400px;
+    border: 3px solid blue;
+  }
+  .btn-wrapper {
+    margin: 24px auto;
+  }
+  .btn-wrapper button {
+    font-size: 12px;
+    color: blue;
+    background-color: white;
+  }
+  .btn-wrapper button:hover {
   color: white;
   background-color: blue;
 }
@@ -67,6 +67,7 @@ button {
   background-color: gold;
   font-size: 12px;
 }
+
 .dup-button button:hover{
   color: white;
   background-color: blue;
@@ -129,34 +130,35 @@ button {
   flex-direction: row;
   gap: 10px;
 }
-  `;
 
-  constructor() {
-    super();
-    this.header = 'My app';
-  }
+`;
 
-  render() {
-    return html`
-      <main>
-      <div class="card-container">
+constructor() {
+  super();
+  this.header = 'My app';
+}
+
+render() {
+  return html`
+    <main>
+    <div class="card-container">
 <div class="wrapper">
-        <div class="card">
-  <img class="image"
+      <div class="card">
+<img class="image"
 src="https://logos-world.net/wp-content/uploads/2020/05/Pittsburgh-Penguins-symbol.jpg"
 alt="Penguins Logo" width="400" height="225">
 <div class="header">
-  <h3>Pittsburgh Penguins National Hockey Team</h3>
-  </div>
-  <h4>Description</h4>
-    <div class="description">
-  <h5>The Pittsburgh Penguins are an NHL hockey team from Pittsburgh, known for their championships and star players like Sidney Crosby and Mario Lemieux.</h5>
-  </div>
+<h3>Pittsburgh Penguins National Hockey Team</h3>
+</div>
+<h4>Description</h4>
+  <div class="description">
+<h5>The Pittsburgh Penguins are an NHL hockey team from Pittsburgh, known for their championships and star players like Sidney Crosby and Mario Lemieux.</h5>
+</div>
 <div class="btn-wrapper">
-    <button onclick="hideDescription()">Details</button>
-  </div>
-  </div>
-  </div>
+  <button onclick="hideDescription()">Details</button>
+</div>
+</div>
+</div>
 </div>
 
 <div class="button-box">

@@ -21,7 +21,6 @@ class PenguinCard extends LitElement {
       text-align: center;
       background-color: var(--penguin-card-background-color);
     }
-
     .wrapper {
   width: 400px;
   border: 3px solid blue;
@@ -38,13 +37,11 @@ class PenguinCard extends LitElement {
   color: white;
   background-color: blue;
 }
-
 @media screen and (max-width: 799px) and (min-width: 501px) {
   .button {
     display: block;
   }
 }
-
 @media screen and (max-width: 500px) {
   .card {
     transform: scale(0.8);
@@ -53,13 +50,11 @@ class PenguinCard extends LitElement {
     width: 80%;
   }
 }
-
 .wrapper {
   background-color: gold;
   padding: 20px;
   margin-bottom: 10px;
 }
-
 button {
   margin: 10px;
 }
@@ -75,7 +70,6 @@ button {
   color: white;
   background-color: blue;
 }
-
 .backgroundcolorButton button {
   background-color: gold;
   font-size: 12px;
@@ -88,7 +82,6 @@ button {
   color: white;
   background-color: blue;
 }
-
 .headingButton button {
   background-color: gold;
   font-size: 12px;
@@ -101,7 +94,6 @@ button {
   color: white;
   background-color: blue;
 }
-
 .deleteCard button {
   background-color: gold;
   font-size: 12px;
@@ -114,7 +106,6 @@ button {
   color: white;
   background-color: blue;
 }
-
 .button-box {
   background-color: #f0f0f0;
   border: 2px solid blue;
@@ -123,7 +114,6 @@ button {
   display: inline-block;
   box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.2);
 }
-
 .card-container {
   display: flex;
   flex-direction: row;
@@ -135,43 +125,6 @@ button {
     super();
     this.header = 'My app';
   }
-
-  firstUpdated() {
-    document.querySelector(".dup-button").addEventListener("click", (e) => {
-      const card = document.querySelector(".wrapper");
-      const cardCopy = card.cloneNode(true);
-      card.appendChild(cardCopy);
-      card.parentNode.insertBefore(cardCopy, card.nextSibling);
-    });
-    
-    function hideDescription() {
-      if (document.querySelector(".description").hidden == true){
-        document.querySelector(".description").hidden = false;
-      }
-      else {
-        document.querySelector(".description").hidden = true;
-    
-      }
-    }
-    
-    function changeBackgroundColor() {
-      
-      if (document.querySelector(".wrapper").style.backgroundColor == 'gold') {
-        document.querySelector(".wrapper").style.backgroundColor = 'red', 'orange', 'green', 'blue', 'purple';
-      } else {
-        document.querySelector(".wrapper").style.backgroundColor = 'gold';
-      }
-    }
-    
-    function changeHeading() {
-      document.querySelector(".header").innerHTML = "<h1>something else</h1>";
-    }
-    
-    function deleteDupCard() {
-      const card = document.querySelector(".wrapper");
-      card.remove();
-    }
-
 
   render() {
     return html`
@@ -195,7 +148,6 @@ alt="Penguins Logo" width="400" height="225">
   </div>
   </div>
 </div>
-
 <div class="button-box">
 <div class="dup-button">
   <button>Duplicate</button>
@@ -204,15 +156,23 @@ alt="Penguins Logo" width="400" height="225">
 <div class="backgroundcolorButton">
   <button onclick="changeBackgroundColor()"> Change Background Color</button>
     </div>
-
 <div class="headingButton">
   <button onclick="changeHeading()"> Change Heading</button>
     </div>
-
 <div class="deleteCard">
   <button onclick="deleteDupCard()">Delete</button>
 </div>
 </div>
+      </main>
+      <p class="app-footer">
+        🚽 Made with love by
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/open-wc"
+          >open-wc</a
+        >.
+      </p>
     `;
   }
 }

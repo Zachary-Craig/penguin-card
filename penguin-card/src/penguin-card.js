@@ -136,6 +136,43 @@ button {
     this.header = 'My app';
   }
 
+  firstUpdated() {
+    document.querySelector(".dup-button").addEventListener("click", (e) => {
+      const card = document.querySelector(".wrapper");
+      const cardCopy = card.cloneNode(true);
+      card.appendChild(cardCopy);
+      card.parentNode.insertBefore(cardCopy, card.nextSibling);
+    });
+    
+    function hideDescription() {
+      if (document.querySelector(".description").hidden == true){
+        document.querySelector(".description").hidden = false;
+      }
+      else {
+        document.querySelector(".description").hidden = true;
+    
+      }
+    }
+    
+    function changeBackgroundColor() {
+      
+      if (document.querySelector(".wrapper").style.backgroundColor == 'gold') {
+        document.querySelector(".wrapper").style.backgroundColor = 'red', 'orange', 'green', 'blue', 'purple';
+      } else {
+        document.querySelector(".wrapper").style.backgroundColor = 'gold';
+      }
+    }
+    
+    function changeHeading() {
+      document.querySelector(".header").innerHTML = "<h1>something else</h1>";
+    }
+    
+    function deleteDupCard() {
+      const card = document.querySelector(".wrapper");
+      card.remove();
+    }
+
+
   render() {
     return html`
       <main>
@@ -176,17 +213,6 @@ alt="Penguins Logo" width="400" height="225">
   <button onclick="deleteDupCard()">Delete</button>
 </div>
 </div>
-      </main>
-
-      <p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>
     `;
   }
 }

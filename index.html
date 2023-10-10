@@ -8,21 +8,128 @@
   <base href="/">
 
   <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background-color: #ededed;
-    }
+  .dup-button button {
+  background-color: gold;
+  font-size: 12px;
+}
+.dup-button button:hover{
+  color: white;
+  background-color: blue;
+}
+.dup-button button:focus{
+  color: white;
+  background-color: blue;
+}
+.backgroundcolorButton button {
+  background-color: gold;
+  font-size: 12px;
+}
+.backgroundcolorButton button:hover{
+  color: white;
+  background-color: blue;
+}
+.backgroundcolorButton button:focus{
+  color: white;
+  background-color: blue;
+}
+.headingButton button {
+  background-color: gold;
+  font-size: 12px;
+}
+.headingButton button:hover{
+  color: white;
+  background-color: blue;
+}
+.headingButton button:focus{
+  color: white;
+  background-color: blue;
+}
+.deleteCard button {
+  background-color: gold;
+  font-size: 12px;
+}
+.deleteCard button:hover{
+  color: white;
+  background-color: blue;
+}
+.deleteCard button:focus{
+  color: white;
+  background-color: blue;
+}
+.button-box {
+  background-color: #f0f0f0;
+  border: 2px solid blue;
+  border-radius: 10px;
+  padding: 1px;
+  display: inline-block;
+  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
   </style>
+
   <title>penguin-card</title>
 </head>
+<div class="button-box">
+  <div class="dup-button">
+    <button>Duplicate</button>
+  </div>
+       
+  <div class="backgroundcolorButton">
+    <button onclick="changeBackgroundColor()"> Change Background Color</button>
+      </div>
+  
+  <div class="headingButton">
+    <button onclick="changeHeading()"> Change Heading</button>
+      </div>
+  
+  <div class="deleteCard">
+    <button onclick="deleteDupCard()">Delete</button>
+  </div>
+  </div>
 
 <body>
   <penguin-card></penguin-card>
 
   <script type="module" src="./src/penguin-card.js"></script>
-</body>
+  <script>
+    document.querySelector(".dup-button").addEventListener("click", (e) => {
+        const card = document.querySelector("penguin-card");
+        const cardCopy = card.cloneNode(true);
+        cardCopy.appendChild(card);
+      });
+
+      function hideDescription() {
+  if (document.querySelector(".description").hidden == true){
+    document.querySelector(".description").hidden = false;
+  }
+  else {
+    document.querySelector(".description").hidden = true;
+
+  }
+}
+
+function changeBackgroundColor() {
+  
+  if (document.querySelector(".wrapper").style.backgroundColor == 'gold') {
+    document.querySelector(".wrapper").style.backgroundColor = 'red', 'orange', 'green', 'blue', 'purple';
+  } else {
+    document.querySelector(".wrapper").style.backgroundColor = 'gold';
+  }
+}
+
+function changeHeading() {
+  document.querySelector(".header").innerHTML = "<h1>something else</h1>";
+}
+
+function deleteDupCard() {
+  const card = document.querySelector(".wrapper");
+  card.remove();
+}
+  </script>
+  </body>
 
 </html>

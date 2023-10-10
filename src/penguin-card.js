@@ -58,74 +58,13 @@ class PenguinCard extends LitElement {
 button {
   margin: 10px;
 }
-.dup-button button {
-  background-color: gold;
-  font-size: 12px;
-}
-.dup-button button:hover{
-  color: white;
-  background-color: blue;
-}
-.dup-button button:focus{
-  color: white;
-  background-color: blue;
-}
-.backgroundcolorButton button {
-  background-color: gold;
-  font-size: 12px;
-}
-.backgroundcolorButton button:hover{
-  color: white;
-  background-color: blue;
-}
-.backgroundcolorButton button:focus{
-  color: white;
-  background-color: blue;
-}
-.headingButton button {
-  background-color: gold;
-  font-size: 12px;
-}
-.headingButton button:hover{
-  color: white;
-  background-color: blue;
-}
-.headingButton button:focus{
-  color: white;
-  background-color: blue;
-}
-.deleteCard button {
-  background-color: gold;
-  font-size: 12px;
-}
-.deleteCard button:hover{
-  color: white;
-  background-color: blue;
-}
-.deleteCard button:focus{
-  color: white;
-  background-color: blue;
-}
-.button-box {
-  background-color: #f0f0f0;
-  border: 2px solid blue;
-  border-radius: 10px;
-  padding: 1px;
-  display: inline-block;
-  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.2);
-}
-.card-container {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
   `;
 
   constructor() {
     super();
     this.header = 'My app';
   }
-
+  
   render() {
     return html`
       <main>
@@ -142,26 +81,8 @@ alt="Penguins Logo" width="400" height="225">
     <div class="description">
   <h5>The Pittsburgh Penguins are an NHL hockey team from Pittsburgh, known for their championships and star players like Sidney Crosby and Mario Lemieux.</h5>
   </div>
-<div class="btn-wrapper">
-    <button onclick="hideDescription()">Details</button>
   </div>
   </div>
-  </div>
-</div>
-<div class="button-box">
-<div class="dup-button">
-  <button>Duplicate</button>
-</div>
-     
-<div class="backgroundcolorButton">
-  <button onclick="changeBackgroundColor()"> Change Background Color</button>
-    </div>
-<div class="headingButton">
-  <button onclick="changeHeading()"> Change Heading</button>
-    </div>
-<div class="deleteCard">
-  <button onclick="deleteDupCard()">Delete</button>
-</div>
 </div>
       </main>
       <p class="app-footer">

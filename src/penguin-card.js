@@ -84,16 +84,6 @@ alt="Penguins Logo" width="400" height="225">
   </div>
   </div>
 </div>
-      </main>
-      <p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>
     `;
   }
 }
